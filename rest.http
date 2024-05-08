@@ -7,3 +7,11 @@ Content-Type: application/json
     "name": "Prem",
     "password":"123"
 }
+
+###delete
+DELETE http://localhost:8000/api/v1/transactions
+#header
+Content-Type: application/json
+
+#body
+ ["6639e7752b3c589026c43f72"]

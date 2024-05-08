@@ -1,5 +1,5 @@
 import express from "express";
-import { deleteTrans, getTransactionById, insertNewTrans } from "../model/transaction/TransactionModel.js";
+import {  deleteTransaction, getTransactionById, insertNewTrans } from "../model/transaction/TransactionModel.js";
 
 const router = express.Router();
 
@@ -43,24 +43,22 @@ router.post("/", async(req, res) => {
   }
 });
 
-router.delete('/',async(req,res)=>{
-    console.log(req.body);
+router.delete("/",async(req,res)=>{
+    
     try {
-        const { ids } = req.body;
-        const result = await deleteTrans(ids)
-      
+        const {ids} = req.body;
 
-        if (result.deletedCount > 0) {
-            res.json({
-                status: "success",
-                message: "Transactions have been deleted",
-            });
-        } else {
-            res.json({
-                status: "error",
-                message: "No transactions were deleted",
-            });
-        }
+        const result = await deleteTransaction(ids)
+        console.log(result)
+        
+
+        result?.deletedCount>0
+      ? res.json({
+          message: "task has been deleted",
+        })
+      : res.json({
+          message: "unable to delete try again later",
+        });
 
     } catch (error) {
         res.status(500).json({
