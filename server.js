@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== "production") {
 app.use(express.json());
 
 app.use('/api/v1/users', userRouter )
-app.use('/api/v1/transactions',transactionRouter)
+app.use('/api/v1/transactions', transactionRouter)
 
 
 app.listen(PORT, (error)=>{
