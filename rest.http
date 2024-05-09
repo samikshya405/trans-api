@@ -5,11 +5,10 @@ Content-Type: application/json
 
 {
     "name": "Prem",
-    "email":"KK@kk.kk",
-    "phone":"1213443543",
-    "password":"123",
-    
-    
+    "email":"hjkhkjkjgjhjhghjgf@h.com",
+    "phone":"12134433",
+    "password":"123"
+      
 }
 
 ###delete
